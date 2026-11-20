@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shelfwise — Library Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-art">
+      <div class="brand brand-light"><span class="brand-icon">▣</span><span><b>shelfwise.</b><small>LIBRARY DESK</small></span></div>
+      <span class="campus-pill">CAMPUS LIBRARY</span>
+      <div class="login-message">
+        <p class="eyebrow pink">✧ &nbsp; A QUIETER KIND OF PRODUCTIVITY</p>
+        <h1>There’s a little<br>room for <em>everyone.</em></h1>
+        <p>Books find readers, ideas find a home, and a campus feels a little<br class="desktop-only"> more connected.</p>
+      </div>
+      <div class="book-stack" aria-hidden="true">
+        <div class="book book-one">THE ART OF<br>LEARNING<small>J. DUNLOP</small></div>
+        <div class="book book-two">NOTES FROM<br>THE MARGINS<small>VOL. 03</small></div>
+        <div class="book book-three">THE<br>CREATIVE<br>MIND</div>
+        <div class="book book-four">FIELD<br>GUIDES<small>NO. 27</small></div>
+        <div class="book book-five">HOW<br>WE<br>THINK</div>
+      </div>
+      <div class="login-bottom"><span>EST. FOR CURIOUS MINDS</span><span>01 — 04</span></div>
+    </div>
+    <div class="login-panel">
+      <form id="loginForm" class="login-form">
+        <p class="eyebrow">YOUR CAMPUS LIBRARY</p>
+        <h2>Good to have you<br>back<span class="purple-dot">.</span></h2>
+        <p class="muted">Sign in to take your seat at the library desk.</p>
+        <label>Email address<input id="loginEmail" type="email" value="admin@library.edu" required></label>
+        <label>Password<input id="loginPassword" type="password" value="library123" required></label>
+        <button class="primary-btn login-submit" type="submit">Sign in <span>→</span></button>
+        <div class="demo-box"><b>⌘ &nbsp; DEMO ACCESS</b><div><span>admin@library.edu</span><span>library123</span></div></div>
+        <div class="login-foot"><span>Simple things, thoughtfully kept.</span><span>© 2026 SHELFWISE</span></div>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">▣</span><span><b>shelfwise.</b><small>LIBRARY DESK</small></span></div>
+      <p class="side-label">WORKSPACE</p>
+      <nav id="navigation">
+        <button class="nav-link active" data-page="overview"><span>▦</span>Overview</button>
+        <button class="nav-link" data-page="books"><span>▤</span>Books</button>
+        <button class="nav-link" data-page="students"><span>♧</span>Students</button>
+        <button class="nav-link" data-page="loans"><span>↙</span>Loans <i id="loanBadge">3</i></button>
+        <button class="nav-link" data-page="fines"><span>ⓡ</span>Fines</button>
+        <button class="nav-link" data-page="settings"><span>☷</span>Settings</button>
+      </nav>
+      <div class="sidebar-promo">
+        <span class="promo-icon">✧</span><h3>Keep your shelves in sync</h3>
+        <p>Your library has <b id="promoCopies">23</b> copies ready to find a new reader.</p>
+        <button data-go="books">Browse collection&nbsp; →</button>
+      </div>
+      <div class="profile"><div class="avatar peach">KJ</div><div><b>Kshitij Jain</b><small>Library administrator</small></div><button id="logoutBtn" title="Sign out">⇥</button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div><span>Library</span><b>/</b><strong id="breadcrumb">Overview</strong></div><div class="top-right"><span>▦ &nbsp; <span id="todayDate"></span></span><div class="avatar lilac">KJ</div></div></header>
+      <div id="pageContent" class="page-content"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden"><div class="modal-backdrop" data-close="true"></div><div class="modal-card"><div class="modal-head"><h3 id="modalTitle">Add record</h3><button id="modalClose" class="icon-btn">×</button></div><form id="modalForm"><div id="modalFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="modalCancel">Cancel</button><button type="submit" class="primary-btn">Save record</button></div></form></div></div>
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
